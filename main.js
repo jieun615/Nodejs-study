@@ -8,7 +8,7 @@ var sanitizeHtml = require('sanitize-html');
 var compression = require('compression')
 var template = require('./lib/template.js');
  
-app.use(express.static('Nodejs-master'));
+app.use(express.static('test'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(compression());
 app.get('*', function(request, response, next){
@@ -27,7 +27,7 @@ app.get('/', function(request, response) {
   var html = template.HTML(title, list,
     `
     <h2>${title}</h2>${description}
-    <img src="img.png">
+    <img src="드림이.png" style="width:300px; display:block; margin-top:10px;">
     `,
     `<a href="/create">create</a>`
   ); 
